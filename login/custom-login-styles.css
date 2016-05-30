@@ -49,3 +49,13 @@ body
 	background: #117dc1;
 	border-radius: 0px;
 }
+
+.login label
+{
+	font-weight: bold;
+	color: black;
+}
+.login form .input, .login form input[type=checkbox], .login input[type=text]
+{
+	font-weight: normal;
+}

@@ -449,13 +449,28 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
+/*------------------------------------*\
+	ShortCode Functions
+\*------------------------------------*/
 
-function my_custom_login() {
-echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/login/custom-login-styles.css" />';
+function my_custom_login()
+{
+	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/login/custom-login-styles.css" />';
 }
+
+
+/* redirect users to front page after login */
+function redirect_to_front_page()
+{
+	global $redirect_to;
+		if (!isset($_GET['redirect_to']))
+		{
+			$redirect_to = get_option('siteurl');
+		}
+}
+
 add_action('login_head', 'my_custom_login');
-
-
+add_action('login_form', 'redirect_to_front_page');
 
 
 ?>
