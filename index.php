@@ -1,34 +1,30 @@
 <?php get_header(); ?>
 
 	<main role="main">
-		<!-- section -->
-		<section>
 
-			<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
+	<div class="row">
+		<div class="col-md-8">
+			<section id="hoofdberichten">
 
-			<?php get_template_part('loop'); ?>
+				<?php get_template_part('partials/loop-main'); ?>
 
-			<?php get_template_part('pagination'); ?>
+			</section>
+		</div>
 
+		<div class="col-md-4">
+			<section id="weather">
+				<?php get_template_part('partials/partial-weather'); ?>
+			</section>
 
-			 <!--WEER - DEZE WORDT IN addons/ppclock/ppclock.js INGELADEN -->
-				<div id="weer">
-					<div id="weer-background">
-						<div id="weer-bg-seperator-1" class="weer-bg-seperator"></div>
-						<div id="weer-bg-seperator-2" class="weer-bg-seperator"></div>
-						<div id="weer-bg-seperator-3" class="weer-bg-seperator"></div>
-					</div>
-					<div id="weer-tijd"></div>
-					<div id="weer-stad"></div>
-					<div id="weer-type"></div>
-					<div id="weer-icon"></div>
-					<div id="weer-date"></div>
-					<div id="weer-temp"></div>
-				</div>
+		<section id="kleinberichten">
+
+			<?php get_template_part('partials/loop-klein'); ?>
+
 		</section>
-		<!-- /section -->
+		</div>
+	</div>
 	</main>
 
-<?php get_sidebar(); ?>
+<!--?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
