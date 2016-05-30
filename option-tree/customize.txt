@@ -1,0 +1,65 @@
+Change the following content:
+
+---------------------------------------------------------------------------------------------
+ot-functions-admin.php
+---------------------------------------------------------------------------------------------
+/* Change name of title in page */
+50    =       //'parent_slug'     => apply_filters( 'ot_theme_options_parent_slug', 'theme52s.php' )53,=
+
+/* Change name of menu in Dashboard*/
+52    =       'page_title'      => apply_filters( 'ot_theme_options_page_title', __( 'iMoves Options', 'option-tree' ) ),
+
+/* Remove from Appearance/weergave node and place in parent dashboard*/
+53    =       'menu_title'      => apply_filters( 'ot_theme_options_menu_title', __( 'iMoves Options', 'option-tree' ) ),
+
+/* position node in dashboard */
+57    =       'position'        => 61, 
+
+/* Icon dashboard   */
+65    =       'icon_url'        => get_template_directory_uri() . '/img/icons/themeoptions_icon.png',
+
+---------------------------------------------------------------------------------------------
+ot-loader.php
+---------------------------------------------------------------------------------------------
+/* Remove layout filter */
+255   =       define( 'OT_SHOW_NEW_LAYOUT', apply_filters( 'ot_show_new_layout', false ) );
+
+/* Edit logo of theme options * / 
+600   =       #adminmenu #toplevel_page_ot-settings .menu-icon-generic div.wp-menu-image:before,
+              #option-tree-header #option-tree-logo a:before {
+              content: "\e785";
+              }
+              
+  768 	= change text upload text button             
+
+---------------------------------------------------------------------------------------------
+ functions.php
+---------------------------------------------------------------------------------------------
+
+*** register functions of Options Tree
+
+// Optional: set 'ot_show_pages' filter to false.
+// This will hide the settings & documentation pages.
+
+add_filter( 'ot_show_pages', '__return_false' );
+
+//* Required: set 'ot_theme_mode' filter to true.
+
+add_filter( 'ot_theme_mode', '__return_true' );
+ 
+//* Required: include OptionTree.
+
+include_once( 'option-tree/ot-loader.php' );
+
+// *Theme Options
+
+include_once( 'includes/theme-options.php' );
+
+?>
+
+---------------------------------------------------------------------------------------------
+ ot-settings-api.php
+---------------------------------------------------------------------------------------------
+270   =       echo '<li id="option-tree-logo">' . apply_filters( 'ot_header_logo_link', '<a href="http://fleaco.nl" target="_blank">OptionTree</a>', $page['id'] ) . '</li>';
+                  
+271   =       echo '<li id="option-tree-version"><span>' . apply_filters( 'ot_header_version_text', 'Fleaco Design Theme Options '). '</span></li>';

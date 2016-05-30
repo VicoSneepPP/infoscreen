@@ -482,4 +482,24 @@ add_action('login_head', 'my_custom_login');
 add_action('login_form', 'redirect_to_front_page');
 
 
+
+
+/*------------------------------------*\
+	External functions and modules
+\*------------------------------------*/
+//*** register functions of Options Tree
+// This will hide the settings & documentation pages.
+add_filter( 'ot_show_pages', '__return_false' ); 	//* Optional: set 'ot_show_pages' filter to false.
+add_filter( 'ot_theme_mode', '__return_true' );		//* Required: set 'ot_theme_mode' filter to true.
+add_filter( 'the_content', 'autoadd_rel_prettyPhoto');
+
+//* Include: include OptionTree.
+include_once( 'option-tree/ot-loader.php' );
+
+//* Include: *Theme Options
+include_once( 'includes/pp-options/theme-options.php' );
+
+//* Include: Option Tree Bridge
+include_once('includes/pp-options/multilingual-option-tree.php');
+
 ?>
