@@ -1,3 +1,51 @@
+/*---------------------------------*\
+** 	CUSTOM LOGIN STYLES
+**
+\*---------------------------------*/
+
+html, body
+{
+	background: #FFF;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	color: #333;
+}
+
+body
+{
+	background-image: url('../img/login/KONE_Cityscape_Bluegrey_rgb.png');
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+
+
 .login h1 a {
-  background-image: url('../img/logo.png');
+	background-image: url('../img/login/login-logo.png');
+    width: 330px;
+    height: 60px;
+    background-size: contain;
+
+}
+
+.login form
+{
+	border: 3px solid #b9b8b9;
+	box-shadow: none;
+	padding: 40px;
+}
+
+.login #backtoblog
+{
+	display: none;
+}
+
+.login #nav
+{
+	display:none;
+}
+
+.wp-core-ui .button-primary
+{
+	background: #117dc1;
+	border-radius: 0px;
 }
