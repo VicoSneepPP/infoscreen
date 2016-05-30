@@ -1,5 +1,5 @@
 
-<?php if(!is_user_logged_in()){header("Location:" . home_url() . "/wp-login.php");} ?>
+<?php if(!is_user_logged_in()){header("Location:" . home_url() . "/wp-login.php");} ?><!-- redirect login-->
 
 
 <!doctype html>
