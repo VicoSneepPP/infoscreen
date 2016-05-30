@@ -11,6 +11,9 @@
 			</footer>
 			<!-- /footer -->
 
+				<div id="news-ticker">
+					<div id="news-items" class="original"></div>
+				</div>
 		</div>
 		<!-- /wrapper -->
 

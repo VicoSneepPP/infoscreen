@@ -101,11 +101,17 @@ function pp_header_scripts()
 		wp_register_script('bootstrap', get_template_directory_uri() . '/js/lib/bootstrap.min.js', array('jquery'), '3.3.6'); // bootstrap
         wp_enqueue_script('bootstrap'); // Enqueue it!
 
+		wp_register_script('velocity', get_template_directory_uri() . '/js/lib/velocity.min.js', array('jquery'), '3.3.6'); // bootstrap
+        wp_enqueue_script('velocity'); // Enqueue it!
+
 		wp_register_script('ppweather', get_template_directory_uri() . '/includes/ppclock/ppclock.js', array('jquery'), '1.0.0'); // Weather
         wp_enqueue_script('ppweather'); // Enqueue it!
 
-        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('html5blankscripts'); // Enqueue it!
+		wp_register_script('ppnewsticker', get_template_directory_uri() . '/js/lib/newsticker.js', array('jquery'), '1.0.0'); // news tikker
+        wp_enqueue_script('ppnewsticker'); // Enqueue it!
+
+        wp_register_script('ppscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('ppscripts'); // Enqueue it!
     }
 }
 
