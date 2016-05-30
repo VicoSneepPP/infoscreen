@@ -133,8 +133,8 @@ function pp_styles()
 	wp_register_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '1.0', 'all');
     wp_enqueue_style('bootstrap'); // Enqueue it!
 
-    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
-    wp_enqueue_style('html5blank'); // Enqueue it!
+    wp_register_style('ppstyles', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+    wp_enqueue_style('ppstyles'); // Enqueue it!
 }
 
 // Register HTML5 Blank Navigation
@@ -360,7 +360,7 @@ add_action('wp_print_scripts', 'pp_conditional_scripts'); // Add Conditional Pag
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'pp_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+add_action('init', 'create_post_type'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -410,26 +410,26 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 	Custom Post Types
 \*------------------------------------*/
 
-// Create 1 Custom Post type for a Demo, called HTML5-Blank
-function create_post_type_html5()
+
+function create_post_type()
 {
-    register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'html5-blank');
-    register_post_type('html5-blank', // Register Custom Post Type
+    register_taxonomy_for_object_type('category', 'hoofdbericht'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'hoofdbericht');
+    register_post_type('hoofdbericht', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
-            'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit HTML5 Blank Custom Post', 'html5blank'),
-            'new_item' => __('New HTML5 Blank Custom Post', 'html5blank'),
-            'view' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'view_item' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'search_items' => __('Search HTML5 Blank Custom Post', 'html5blank'),
-            'not_found' => __('No HTML5 Blank Custom Posts found', 'html5blank'),
-            'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'html5blank')
+            'name' 				=> __('Hoofdberichten', 'pplang'), // Rename these to suit
+            'singular_name' 	=> __('Hoofdbericht', 'pplang'),
+            'add_new' 			=> __('Voeg nieuwe toe', 'pplang'),
+            'add_new_item' 		=> __('Voeg nieuw Hoofdbericht toe', 'pplang'),
+            'edit' 				=> __('Edit', 'pplang'),
+            'edit_item' 		=> __('Edit Hoofdbericht', 'pplang'),
+            'new_item' 			=> __('New Hoofdbericht', 'pplang'),
+            'view' 				=> __('Bekijk Hoofdbericht', 'pplang'),
+            'view_item' 		=> __('Bekijk Hoofdbericht', 'pplang'),
+            'search_items' 		=> __('Zoek Hoofdbericht', 'pplang'),
+            'not_found' 		=> __('Geen Hoofdbericht gevonden', 'pplang'),
+            'not_found_in_trash'=> __('Geen Hoofdbericht gevonden in de prullenbak', 'pplang')
         ),
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
@@ -437,7 +437,6 @@ function create_post_type_html5()
         'supports' => array(
             'title',
             'editor',
-            'excerpt',
             'thumbnail'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
@@ -446,6 +445,42 @@ function create_post_type_html5()
             'category'
         ) // Add Category and Post Tags support
     ));
+
+	register_taxonomy_for_object_type('category', 'Kleinbericht'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'Kleinbericht');
+    register_post_type('Kleinbericht', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' 				=> __('Kleine berichten', 'pplang'), // Rename these to suit
+            'singular_name' 	=> __('Klein bericht', 'pplang'),
+            'add_new' 			=> __('Voeg nieuwe toe', 'pplang'),
+            'add_new_item' 		=> __('Voeg nieuw klein bericht toe', 'pplang'),
+            'edit' 				=> __('Edit', 'pplang'),
+            'edit_item' 		=> __('Edit klein bericht', 'pplang'),
+            'new_item' 			=> __('New klein bericht', 'pplang'),
+            'view' 				=> __('Bekijk klein bericht', 'pplang'),
+            'view_item' 		=> __('Bekijk klein bericht', 'pplang'),
+            'search_items' 		=> __('Zoek klein bericht', 'pplang'),
+            'not_found' 		=> __('Geen klein bericht gevonden', 'pplang'),
+            'not_found_in_trash'=> __('Geen klein bericht gevonden in de prullenbak', 'pplang')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+			'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+            'post_tag',
+            'category'
+        ) // Add Category and Post Tags support
+    ));
+
+
 }
 
 /*------------------------------------*\
@@ -508,4 +543,7 @@ include_once( 'includes/pp-options/theme-options.php' );
 //* Include: Option Tree Bridge
 include_once('includes/pp-options/multilingual-option-tree.php');
 
+//* Include: ACF
+include_once('include/advanced-custom-fields.php');
+define( 'ACF_LITE', false );
 ?>
