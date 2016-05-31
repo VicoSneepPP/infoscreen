@@ -602,7 +602,7 @@ if ( ! class_exists( 'OT_Loader' ) ) {
         #adminmenu #toplevel_page_ot-settings .menu-icon-generic div.wp-menu-image:before,
         #option-tree-header #option-tree-logo a:before {
           content: "";
-          background: url("' . get_template_directory_uri() . '/img/pp_icon.png");
+          background: url("' . get_template_directory_uri() . '/img/icons/pp_icon.png");
           background-size: 30px 30px;
 		  background-repeat: no-repeat;
 		  background-position: 50%;
