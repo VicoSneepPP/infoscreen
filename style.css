@@ -128,7 +128,7 @@ input:focus {
  #news
 {
 	position: relative;
-	margin-top: 4%;
+	margin-top: 30px;
 	width: 100%;
 	height: 350px;
 	overflow: hidden;
@@ -158,7 +158,7 @@ input:focus {
 	background-color: #007DC6;
 	color: #FFF;
 	line-height: 37px;
-	text-indent: 10px;
+	padding: 0px 10px;
 	font-weight: bold;
 }
 
@@ -300,8 +300,40 @@ p {
     RESPONSIVE
 \*------------------------------------*/
 
-@media only screen and (min-width:320px) {
-
+@media only screen and (min-width:320px) and (max-width: 767px) {
+	h1 {
+		font-size: 2.0em;
+	}
+	p
+	{
+		font-size: 1.6em;
+	}
+	.text
+	{
+		padding: 0px;
+	}
+	.wrapper
+	{
+		margin-top: 15px;
+	}
+	.content-block
+	{
+    	margin-left: -15px;
+    	margin-right: -15px;
+	}
+	#news
+	{
+		height: 240px;
+	}
+	#news .news-item .image
+	{
+		height: auto;
+	}
+	#news .news-item .title
+	{
+		padding: 10px;
+		line-height: inherit;
+	}
 }
 @media only screen and (min-width:480px) {
 
