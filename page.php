@@ -1,45 +1,63 @@
 <?php get_header(); ?>
+<?php
+$varWeather = get_field('city_weather');
+?>
+
 
 	<main role="main">
-		<!-- section -->
-		<section>
 
-			<h1><?php the_title(); ?></h1>
+	<div class="row">
+		<div class="col-md-7">
+			<section id="hoofdberichten">
 
-		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+				<?php get_template_part('partials/loop-main'); ?>
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			</section>
+		</div>
 
-				<?php the_content(); ?>
+		<div class="col-md-5">
+			<div class="row">
 
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
+				<section id="weather">
+					<?php get_template_part('partials/partial-weather'); ?>
+				</section>
 
-				<br class="clear">
+				<section id="kleinberichten">
 
-				<?php edit_post_link(); ?>
+					<?php get_template_part('partials/loop-klein'); ?>
 
-			</article>
-			<!-- /article -->
+				</section>
 
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-			<!-- article -->
-			<article>
-
-				<h2><?php _e( 'Sorry, nothing to display.', 'pplang' ); ?></h2>
-
-			</article>
-			<!-- /article -->
-
-		<?php endif; ?>
-
-		</section>
-		<!-- /section -->
+			</div>
+		</div>
+	</div>
 	</main>
+<?php
 
-<?php get_sidebar(); ?>
+
+
+echo
+'<script>
+
+jQuery(document).ready(function($)
+{
+
+	$.getJSON("/wp-content/themes/konenieuws/includes/ppclock/weerfeed.php", function(data)
+	{
+		$("#weer-stad").html(data.list['. $varWeather .'].name);
+		$("#weer-type").html(data.list['. $varWeather .'].weather[0].description);
+		$("#weer-icon").html("<img src=\''. get_template_directory_uri() . '\/includes/ppclock/weather/" + data.list['.  $varWeather .'].weather[0].icon + ".png\' />");
+		$("#weer-temp").html(Math.round(data.list['. $varWeather .'].main.temp) + "&deg;C");
+		//$("#weer-temp").html(Math.round((data.list[0].main.temp - 32) /1.8) + "&deg;C");
+	});
+
+});
+
+
+</script>';
+?>
+
+
+
 
 <?php get_footer(); ?>
