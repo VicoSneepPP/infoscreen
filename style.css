@@ -242,9 +242,11 @@ display:none;
 #weer-stad
 {
 	position:absolute;
-	bottom: 10px; left:0px;
-	width:25%; height:30px;
+	bottom: 10px;
+	left:15px;
+	height:30px;
 	font-weight:bold;
+	font-size: 20px;
 }
 
 #weer-type
