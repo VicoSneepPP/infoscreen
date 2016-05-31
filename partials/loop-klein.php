@@ -1,8 +1,9 @@
 <div class="col-md-12">
+	<div id="news">
 <?php
 
 $loop = new WP_Query(
-			array('post_type'		=> 'kleinbericht',
+			array('post_type'		=> 'nieuws',
 				  'offset'			=>	'0',
 				  'posts_per_page' 	=>  3
 			));
@@ -11,16 +12,18 @@ $loop = new WP_Query(
 ?>
 
 
+	<div class="news-item">
+		<div class="image">
+		<?php if ( has_post_thumbnail() ) {
+			the_post_thumbnail();
 
-<?php if ( has_post_thumbnail() ) {
-    the_post_thumbnail();
+		}?>
+		</div>
 
-	 the_content();
-}?>
+	<div class="title"><?php the_title(); ?> </div>
+	</div>
 
-	<div class="maind"><?php the_title(); ?> <?php echo get_the_content(); ?> </div>
-
-
-<?php endwhile; ?>
-<?php endif; ?>
+		<?php endwhile; ?>
+		<?php endif; ?>
+	</div>
 </div>

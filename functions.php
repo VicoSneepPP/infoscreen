@@ -446,31 +446,29 @@ function create_post_type()
         ) // Add Category and Post Tags support
     ));
 
-	register_taxonomy_for_object_type('category', 'Kleinbericht'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'Kleinbericht');
-    register_post_type('Kleinbericht', // Register Custom Post Type
+	register_taxonomy_for_object_type('category', 'nieuws'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'nieuws');
+    register_post_type('nieuws', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' 				=> __('Kleine berichten', 'pplang'), // Rename these to suit
-            'singular_name' 	=> __('Klein bericht', 'pplang'),
+            'name' 				=> __('Nieuwsberichten', 'pplang'), // Rename these to suit
+            'singular_name' 	=> __('Nieuwsbericht', 'pplang'),
             'add_new' 			=> __('Voeg nieuwe toe', 'pplang'),
-            'add_new_item' 		=> __('Voeg nieuw klein bericht toe', 'pplang'),
+            'add_new_item' 		=> __('Voeg nieuw Nieuwsbericht toe', 'pplang'),
             'edit' 				=> __('Edit', 'pplang'),
-            'edit_item' 		=> __('Edit klein bericht', 'pplang'),
-            'new_item' 			=> __('New klein bericht', 'pplang'),
-            'view' 				=> __('Bekijk klein bericht', 'pplang'),
-            'view_item' 		=> __('Bekijk klein bericht', 'pplang'),
-            'search_items' 		=> __('Zoek klein bericht', 'pplang'),
-            'not_found' 		=> __('Geen klein bericht gevonden', 'pplang'),
-            'not_found_in_trash'=> __('Geen klein bericht gevonden in de prullenbak', 'pplang')
+            'edit_item' 		=> __('Edit Nieuwsbericht', 'pplang'),
+            'new_item' 			=> __('New Nieuwsbericht', 'pplang'),
+            'view' 				=> __('Bekijk Nieuwsbericht', 'pplang'),
+            'view_item' 		=> __('Bekijk Nieuwsbericht', 'pplang'),
+            'search_items' 		=> __('Zoek Nieuwsbericht', 'pplang'),
+            'not_found' 		=> __('Geen Nieuwsbericht gevonden', 'pplang'),
+            'not_found_in_trash'=> __('Geen Nieuwsbericht gevonden in de prullenbak', 'pplang')
         ),
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
         'supports' => array(
             'title',
-            'editor',
-			'excerpt',
             'thumbnail'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
