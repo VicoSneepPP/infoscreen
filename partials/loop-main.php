@@ -1,5 +1,9 @@
+<div id='content'>
+
 
 <?php
+
+
 
 $loop = new WP_Query(
 			array('post_type'		=> 'hoofdbericht',
@@ -10,14 +14,50 @@ $loop = new WP_Query(
 		if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
 ?>
 
-<div class="col-md-8">
-<?php if ( has_post_thumbnail() ) {
-    the_post_thumbnail();
-}?>
 
-<?php echo get_the_content(); ?>
+
+	<?php
+
+	$imgFormat = get_field('img_format_lrg');
+
+
+		if	( has_post_thumbnail() && ($imgFormat == 'hor') )
+		{
+			echo '<div class="content-block">';
+			echo 	'<div class="col-md-12">';
+			echo 		'<div class="image main">';
+							the_post_thumbnail();
+			echo 		'</div>';
+			echo 	'</div>';
+			echo	'<div class="col-md-12">';
+			echo 		'<div class="text">';
+			echo			'<div class="title"><h1>';
+								the_title();
+			echo			'</h1><p>';
+			echo 				get_the_content();
+			echo 			'</p></div>';
+			echo 	'</div>';
+			echo '</div>';
+
+
+		}
+		else if	( has_post_thumbnail() && ($imgFormat == 'ver') )
+		{
+			echo '<div class="content-block">';
+			echo 	'<div class="col-md-6">';
+						the_post_thumbnail();
+			echo 	'</div>';
+			echo	'<div class="col-md-6">';
+			echo		 get_the_content();
+			echo 	'</div>';
+			echo '</div>';
+		};
+
+
+	?>
 
 
 <?php endwhile; ?>
 <?php endif; ?>
+
 </div>
