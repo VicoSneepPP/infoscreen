@@ -1,6 +1,6 @@
 <div id='content'>
 
-
+<div class="col-md-12">
 <?php
 
 
@@ -24,20 +24,23 @@ $loop = new WP_Query(
 		if	( has_post_thumbnail() && ($imgFormat == 'hor') )
 		{
 			echo '<div class="content-block">';
-			echo 	'<div class="col-md-12">';
+			//echo 	'<div class="col-md-12">';
 			echo 		'<div class="image main">';
 							the_post_thumbnail();
 			echo 		'</div>';
-			echo 	'</div>';
-			echo	'<div class="col-md-12">';
+			//echo 	'</div>';
+			//echo	'<div class="col-md-12">';
 			echo 		'<div class="text">';
 			echo			'<div class="title"><h1>';
 								the_title();
-			echo			'</h1><p>';
+			echo				'</h1>';
+			echo 			'</div>';
+			echo			'<p>';
 			echo 				get_the_content();
-			echo 			'</p></div>';
+			echo 			'</p>';
+			echo 		'</div>';
 			echo 	'</div>';
-			echo '</div>';
+			//echo '</div>';
 
 
 		}
@@ -45,10 +48,17 @@ $loop = new WP_Query(
 		{
 			echo '<div class="content-block">';
 			echo 	'<div class="col-md-6">';
-						the_post_thumbnail();
+			echo 		'<div class="image main">';
+							the_post_thumbnail();
+			echo 		'</div>';
 			echo 	'</div>';
 			echo	'<div class="col-md-6">';
-			echo		 get_the_content();
+			echo 		'<div class="text">';
+			echo			'<div class="title"><h1>';
+								the_title();
+			echo			'</h1></div><p>';
+			echo		 		get_the_content();
+
 			echo 	'</div>';
 			echo '</div>';
 		};
@@ -60,4 +70,5 @@ $loop = new WP_Query(
 <?php endwhile; ?>
 <?php endif; ?>
 
+</div>
 </div>
