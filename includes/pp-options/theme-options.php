@@ -100,53 +100,9 @@ function custom_theme_options() {
         'condition'   => '',
         'operator'    => 'and'
       ),
+
       array(
-        'id'          => 'pp_404',
-        'label'       => __( '404 image', 'ppdirect' ),
-        'desc'        => __( 'Upload een .png/.jpg', 'ppdirect' ),
-        'std'         => get_template_directory_uri() . '/img/404pag.gif',
-        'type'        => 'upload',
-        'section'     => 'algemeen',
-        'rows'        => '',
-        'post_type'   => '',
-        'taxonomy'    => '',
-        'min_max_step'=> '',
-        'class'       => '',
-        'condition'   => '',
-        'operator'    => 'and'
-      ),
-      array(
-        'id'          => 'pp_metaslider',
-        'label'       => __( 'Slider homepage', 'ppdirect' ),
-        'desc'        => __( 'Voer hier de id voor de slider op de homepage van Metaslider', 'ppdirect' ),
-        'std'         => '',
-        'type'        => 'text',
-        'section'     => 'algemeen',
-        'rows'        => '',
-        'post_type'   => '',
-        'taxonomy'    => '',
-        'min_max_step'=> '',
-        'class'       => '',
-        'condition'   => '',
-        'operator'    => 'and'
-      ),
-	  array(
-        'id'          => 'pp_brochure',
-        'label'       => __( 'Brochure', 'ppdirect' ),
-        'desc'        => __( 'Upload hier de brochure', 'ppdirect' ),
-        'std'         => '',
-        'type'        => 'upload',
-        'section'     => 'algemeen',
-        'rows'        => '',
-        'post_type'   => '',
-        'taxonomy'    => '',
-        'min_max_step'=> '',
-        'class'       => '',
-        'condition'   => '',
-        'operator'    => 'and'
-      ),
-      array(
-        'id'          => 'pp_google_analytics',
+        'id'          => 'pp_google_analytics (optioneel)',
         'label'       => __( 'Google Analytics', 'ppdirect' ),
         'desc'        => __( 'Voer hier je UA-code in', 'ppdirect' ),
         'std'         => '',
@@ -161,7 +117,7 @@ function custom_theme_options() {
         'operator'    => 'and'
       ),
       array(
-        'id'          => 'pp_hotjar',
+        'id'          => 'pp_hotjar (optioneel)',
         'label'       => __( 'Hotjar ID', 'ppdirect' ),
         'desc'        => __( 'Voer hier je Hotjar ID in', 'ppdirect' ),
         'std'         => '',
