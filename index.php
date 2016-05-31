@@ -3,7 +3,7 @@
 	<main role="main">
 
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-7">
 			<section id="hoofdberichten">
 
 				<?php get_template_part('partials/loop-main'); ?>
@@ -11,16 +11,20 @@
 			</section>
 		</div>
 
-		<div class="col-md-4">
-			<section id="weather">
-				<?php get_template_part('partials/partial-weather'); ?>
-			</section>
+		<div class="col-md-5">
+			<div class="row">
 
-		<section id="kleinberichten">
+				<section id="weather">
+					<?php get_template_part('partials/partial-weather'); ?>
+				</section>
 
-			<?php get_template_part('partials/loop-klein'); ?>
+				<section id="kleinberichten">
 
-		</section>
+					<?php get_template_part('partials/loop-klein'); ?>
+
+				</section>
+
+			</div>
 		</div>
 	</div>
 	</main>
