@@ -2,7 +2,6 @@
 
 	$(function () {
 
-	console.log("222323223232");
 
 var newsTickerWidth = 0;
 var tickerDuration = 200000;
