@@ -39,10 +39,10 @@ jQuery(document).ready(function($)
 	fontsize();
 	$.getJSON("/wp-content/themes/konenieuws/includes/ppclock/weerfeed.php", function(data)
 	{
-		$("#weer-stad").html(data.list[0].name);
-		$("#weer-type").html(data.list[0].weather[0].description);
-		$("#weer-icon").html("<img src='/wp-content/themes/konenieuws/includes/ppclock/weather/" + data.list[0].weather[0].icon + ".png' />");
-		$("#weer-temp").html(Math.round(data.list[0].main.temp) + "&deg;C");
+		$("#weer-stad").html(data.list[1].name);
+		$("#weer-type").html(data.list[1].weather[0].description);
+		$("#weer-icon").html("<img src='/wp-content/themes/konenieuws/includes/ppclock/weather/" + data.list[1].weather[0].icon + ".png' />");
+		$("#weer-temp").html(Math.round(data.list[1].main.temp) + "&deg;C");
 		//$("#weer-temp").html(Math.round((data.list[0].main.temp - 32) /1.8) + "&deg;C");
 	});
 
