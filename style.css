@@ -107,7 +107,67 @@ input:focus {
 .footer {
 
 }
+/*------------------------------------*\
+   index
+\*------------------------------------*/
+.home .logo-img
+{
+	display: none;
+}
+.logo-home
+{
+	width: 60%;
+	padding: 20px 0px;
+	margin: 0 auto;
+	display: block;
+}
+select#page_id {
+    padding: 5px 15px;
+    font-size: 24px;
+    width: 75%;
+    margin: 0 auto;
+    display: block;
+}
 
+button, input[type=submit]
+{
+	-webkit-appearance: none;
+   	-moz-appearance:    none;
+}
+input[type="submit"] {
+    padding: 5px 15px;
+    background: #017dc7;
+    border: none;
+    color: white;
+    font-size: 24px;
+}
+.home input[type="submit"]
+{
+    width: 75%;
+    margin: 10px auto;
+    display: block;
+    text-align: left;
+    text-indent: 5px;
+}
+.pageselect
+{
+	font-style:italic;
+	color: #017dc7;
+	padding: 5px;
+	font-size: 24px;
+    text-align: left;
+	width: 75%;
+	margin: 0 auto;
+	display: block;
+}
+#weatherhome #weer #weer-background
+{
+	background: transparent;
+}
+#weatherhome #weer #weer-tijd
+{
+	color: #017dc7
+}
 /*------------------------------------*\
    hoofdberichten
 \*------------------------------------*/
