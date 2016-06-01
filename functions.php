@@ -446,6 +446,8 @@ function create_post_type()
         //) // Add Category and Post Tags support
     ));
 
+    register_taxonomy_for_object_type('category', 'nieuws'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'nieuws');
     register_post_type('nieuws', // Register Custom Post Type
         array(
         'labels' => array(
@@ -470,10 +472,10 @@ function create_post_type()
             'thumbnail'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
-        //'taxonomies' => array(
+        'taxonomies' => array(
         //    'post_tag',
-        //    'category'
-        //) // Add Category and Post Tags support
+            'category'
+        ) // Add Category and Post Tags support
     ));
 
 
@@ -543,7 +545,29 @@ include_once('includes/pp-options/multilingual-option-tree.php');
 include_once('include/advanced-custom-fields.php');
 define( 'ACF_LITE', false );
 
+/*------------------------------------*\
+	EDit  memu items
+\*------------------------------------*/
+function remove_menus(){
+	remove_menu_page( 'edit.php' );                   //Posts
+	remove_menu_page( 'edit-comments.php' );          //Comments
+
+}
+
+function edit_admin_menus() {
+    global $menu;
+    global $submenu;
+
+    $menu[20][0] = __('Vestigingen', 'pplang');  // Change Posts to Recipes
+    $submenu['edit.php?post_type=page'][5][0] =  __('Alle vestigingen', 'pplang');
+    $submenu['edit.php?post_type=page'][10][0] = __('Nieuwe vestiging toevoegen', 'pplang');
 
 
+    remove_menu_page('tools.php'); // Remove the Tools menu
+    remove_submenu_page('themes.php','theme-editor.php'); // Remove the Theme Editor submenu
+}
 
+
+add_action( 'admin_menu', 'edit_admin_menus' );
+add_action( 'admin_menu', 'remove_menus' );
 ?>

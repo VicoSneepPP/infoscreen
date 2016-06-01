@@ -1,3 +1,8 @@
+#page-ot_theme_options
+{
+	max-width: 900px;
+}
+
 /* --------------------------------------------------
   :: OptionTree Font
   ---------------------------------------------------*/
@@ -1749,7 +1754,7 @@ div.option-tree-ui-media-wrap {
   padding: 4px;
   display: block;
   float: left;
-  max-width: 25%;
+  max-width: 75%;
   height: auto;
   -ms-interpolation-mode: bicubic;
   -webkit-border-radius: 2px;
