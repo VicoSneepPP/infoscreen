@@ -88,25 +88,21 @@ input:focus {
     height: 53px;
     margin-bottom: 30px;
 }
-/* logo */
-.logo {
-
+.image.main.hor
+{
+	width: 100%
 }
-.logo-img {
-
+.image.main.ver
+{
+	width: 50%;
+	float: left;
 }
-/* nav */
-.nav {
-
+.text.ver
+{
+	width: 50%;
+	float: left;
 }
-/* sidebar */
-.sidebar {
 
-}
-/* footer */
-.footer {
-
-}
 /*------------------------------------*\
    index
 \*------------------------------------*/
