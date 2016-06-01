@@ -25,7 +25,9 @@
 			<div class="row">
 
 				<section id="weatherhome">
-					<?php get_template_part('partials/partial-weather'); ?>
+					<div id="weer">
+					<div id="weer-tijd"></div>
+					</div>
 				</section>
 
 

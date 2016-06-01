@@ -31,11 +31,8 @@
 
 			<?php the_content(); // Dynamic Content ?>
 
-			<?php the_tags( __( 'Tags: ', 'pplang' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
-
 			<p><?php _e( 'Categorised in: ', 'pplang' ); the_category(', '); // Separated by commas ?></p>
 
-			<p><?php _e( 'This post was written by ', 'pplang' ); the_author(); ?></p>
 
 			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
@@ -62,6 +59,6 @@
 	<!-- /section -->
 	</main>
 
-<?php get_sidebar(); ?>
+
 
 <?php get_footer(); ?>
