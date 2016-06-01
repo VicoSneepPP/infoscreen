@@ -5,6 +5,9 @@
 		'use strict';
 		
 		// DOM ready, take it away
+		setTimeout(function(){
+		   window.location.reload(1);
+		}, 600000);
 		
 	});
 	
