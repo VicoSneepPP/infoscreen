@@ -542,7 +542,7 @@ include_once( 'includes/pp-options/theme-options.php' );
 include_once('includes/pp-options/multilingual-option-tree.php');
 
 //* Include: ACF
-include_once('includes/advanced-custom-fields.php');
+//include_once('includes/customFields.php');
 define( 'ACF_LITE', false );
 
 
@@ -564,9 +564,18 @@ function my_theme_register_required_plugins() {
 		array(
 			'name'      => 'Advanced Custom Fields',
 			'slug'      => 'advanced-custom-fields',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Polylang',
+			'slug'      => 'polylang',
 			'required'  => true,
 		),
-
+		array(
+			'name'      => 'Lingo Tek translation',
+			'slug'      => 'lingotek-translation',
+			'required'  => true,
+		),
 
 );
 
@@ -591,20 +600,20 @@ function my_theme_register_required_plugins() {
 function remove_menus(){
 	remove_menu_page( 'edit.php' );                   //Posts
 	remove_menu_page( 'edit-comments.php' );          //Comments
-
+    remove_menu_page('tools.php'); // Remove the Tools menu
+    remove_submenu_page('themes.php','theme-editor.php'); // Remove the Theme Editor submenu
 }
 
 function edit_admin_menus() {
     global $menu;
     global $submenu;
 
-    $menu[20][0] = __('Vestigingen', 'pplang');  // Change Posts to Recipes
+    $menu[20][0] = __('Vestigingen', 'pplang');  // Change Posts to vestigingen
     $submenu['edit.php?post_type=page'][5][0] =  __('Alle vestigingen', 'pplang');
     $submenu['edit.php?post_type=page'][10][0] = __('Nieuwe vestiging toevoegen', 'pplang');
 
 
-    remove_menu_page('tools.php'); // Remove the Tools menu
-    remove_submenu_page('themes.php','theme-editor.php'); // Remove the Theme Editor submenu
+
 }
 
 add_action( 'admin_menu', 'edit_admin_menus' );

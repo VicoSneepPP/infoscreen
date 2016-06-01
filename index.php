@@ -12,7 +12,10 @@
 				</div>
 				<div class="col-md-12">
 					<form action="<?php bloginfo('url'); ?>" method="get">
-						<?php wp_dropdown_pages(); ?>
+						<?php
+							wp_dropdown_pages();
+						?>
+
 						<input class="home" type="submit" name="submit" value="Bekijk vestiging" />
 					</form>
 				</div>

@@ -53,14 +53,14 @@ function custom_theme_options() {
         'id'          => 'algemeen',
         'title'       => __( 'Algemeen', 'ppdirect' )
       ),
-		array(
-        'id'          => 'pp_prods',
-        'title'       => __( 'Sectie: Producten', 'ppdirect' )
-      ),
-      array(
-        'id'          => 'pp_social',
-        'title'       => __( 'Sectie: Social icons', 'ppdirect' )
-      ),
+	  //array(
+      //  'id'          => 'pp_prods',
+      //  'title'       => __( 'Sectie: Producten', 'ppdirect' )
+      //),
+      //array(
+      //  'id'          => 'pp_social',
+      //  'title'       => __( 'Sectie: Social icons', 'ppdirect' )
+      //),
     ),
     'settings'        => array(
       array(
