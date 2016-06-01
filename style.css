@@ -129,6 +129,7 @@ select#page_id {
     display: block;
 }
 
+
 button, input[type=submit]
 {
 	-webkit-appearance: none;
@@ -388,6 +389,16 @@ p {
 	{
 		padding: 10px;
 		line-height: inherit;
+	}
+	#weer-tijd
+	{
+		font-size: 10em;
+		height: auto;
+
+	}
+	#weer-temp
+	{
+		right: 10px;
 	}
 }
 @media only screen and (max-width:320px)
