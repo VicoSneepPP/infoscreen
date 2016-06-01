@@ -567,7 +567,6 @@ function edit_admin_menus() {
     remove_submenu_page('themes.php','theme-editor.php'); // Remove the Theme Editor submenu
 }
 
-
 add_action( 'admin_menu', 'edit_admin_menus' );
 add_action( 'admin_menu', 'remove_menus' );
 ?>

@@ -2,13 +2,7 @@
 	<div id="news">
 <?php
 
-$loop = new WP_Query(
-			array('post_type'		=> 'nieuws',
-				  'offset'			=>	'0',
-				  'posts_per_page' 	=>  3
-			));
-
-		if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
+		if ( $loopSmall->have_posts() ) : while ( $loopSmall->have_posts() ) : $loopSmall->the_post();
 ?>
 
 

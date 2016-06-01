@@ -1,6 +1,17 @@
 <?php get_header(); ?>
 <?php
 $varWeather = get_field('city_weather');
+$newsCat 	= get_field('nieuws_van_welke_vestiging');
+
+$catString = '';
+
+foreach ($newsCat as $k => $v)
+{
+  	$totalString .= $v.',';
+
+}
+	$r = rtrim($totalString, ',');
+
 ?>
 
 
@@ -23,8 +34,20 @@ $varWeather = get_field('city_weather');
 				</section>
 
 				<section id="kleinberichten">
+					<?php
 
-					<?php get_template_part('partials/loop-klein'); ?>
+
+					$loopSmall = new WP_Query(
+								array('post_type'		=> 'nieuws',
+									  'offset'			=>	'0',
+									  'posts_per_page' 	=>  3,
+									  'cat'				=> 	$r
+								));
+
+
+					//get_template_part('partials/loop-klein');
+					include('partials/loop-klein.php');
+					?>
 
 				</section>
 
