@@ -543,7 +543,7 @@ include_once('includes/pp-options/multilingual-option-tree.php');
 
 //* Include: ACF
 //include_once('includes/customFields.php');
-define( 'ACF_LITE', false );
+define( 'ACF_LITE', true );
 
 
 //* Call for required plugins
