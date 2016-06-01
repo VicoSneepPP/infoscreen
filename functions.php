@@ -542,9 +542,49 @@ include_once( 'includes/pp-options/theme-options.php' );
 include_once('includes/pp-options/multilingual-option-tree.php');
 
 //* Include: ACF
-include_once('include/advanced-custom-fields.php');
+include_once('includes/advanced-custom-fields.php');
 define( 'ACF_LITE', false );
 
+
+//* Call for required plugins
+require_once('includes/pp-pluginactivation/class-tgm-plugin-activation.php');
+add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+
+add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+
+function my_theme_register_required_plugins() {
+
+	$plugins = array(
+
+		array(
+			'name'      => 'Wp original media-path',
+			'slug'      => 'wp-original-media-path',
+			'required'  => true,
+		),
+		array(
+			'name'      => 'Advanced Custom Fields',
+			'slug'      => 'advanced-custom-fields',
+			'required'  => true,
+		),
+
+
+);
+
+	$config = array(
+		'id'           => 'tgmpa',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',                      // Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins', // Menu slug.
+		'parent_slug'  => 'themes.php',            // Parent menu slug.
+		'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+		'has_notices'  => true,                    // Show admin notices or not.
+		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+		'message'      => '',
+	);
+
+	tgmpa( $plugins, $config );
+}
 /*------------------------------------*\
 	EDit  memu items
 \*------------------------------------*/
