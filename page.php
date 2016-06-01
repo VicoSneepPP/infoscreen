@@ -1,16 +1,18 @@
-<?php get_header(); ?>
-<?php
+<?php get_header();
+
 $varWeather = get_field('city_weather');
-$newsCat 	= get_field('nieuws_van_welke_vestiging');
+$newsCat 	= get_field('vest_news');
+$newsNr 	= get_field('no_nieuws');
+$mainNr 	= get_field('no_main');
 
-$catString = '';
+$catString 	= '';
 
-foreach ($newsCat as $k => $v)
-{
-  	$totalString .= $v.',';
+	foreach ($newsCat as $k => $v)
+	{
+		$totalString .= $v.',';
 
-}
-	$r = rtrim($totalString, ',');
+	}
+	$cat = rtrim($totalString, ',');
 
 ?>
 
@@ -21,7 +23,15 @@ foreach ($newsCat as $k => $v)
 		<div class="col-md-7">
 			<section id="hoofdberichten">
 
-				<?php get_template_part('partials/loop-main'); ?>
+				<?php
+
+					$loop = new WP_Query(
+								array('post_type'		=> 'hoofdbericht',
+									  'offset'			=>	'0',
+									  'posts_per_page' 	=>  $mainNr
+								));
+
+					include('partials/loop-main.php'); ?>
 
 			</section>
 		</div>
@@ -30,7 +40,9 @@ foreach ($newsCat as $k => $v)
 			<div class="row">
 
 				<section id="weather">
+
 					<?php get_template_part('partials/partial-weather'); ?>
+
 				</section>
 
 				<section id="kleinberichten">
@@ -40,8 +52,8 @@ foreach ($newsCat as $k => $v)
 					$loopSmall = new WP_Query(
 								array('post_type'		=> 'nieuws',
 									  'offset'			=>	'0',
-									  'posts_per_page' 	=>  3,
-									  'cat'				=> 	$r
+									  'posts_per_page' 	=>  $newsNr ,
+									  'cat'				=> 	$cat
 								));
 
 

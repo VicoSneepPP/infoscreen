@@ -4,19 +4,8 @@
 <?php
 
 
+	if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
 
-$loop = new WP_Query(
-			array('post_type'		=> 'hoofdbericht',
-				  'offset'			=>	'0',
-				  'posts_per_page' 	=>  3
-			));
-
-		if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
-?>
-
-
-
-	<?php
 
 	$imgFormat = get_field('img_format_lrg');
 
@@ -52,6 +41,7 @@ $loop = new WP_Query(
 							the_post_thumbnail();
 			echo 		'</div>';
 			echo 	'</div>';
+
 			echo	'<div class="col-md-6">';
 			echo 		'<div class="text">';
 			echo			'<div class="title"><h1>';
