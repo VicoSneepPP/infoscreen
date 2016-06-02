@@ -542,7 +542,7 @@ include_once( 'includes/pp-options/theme-options.php' );
 include_once('includes/pp-options/multilingual-option-tree.php');
 
 //* Include: ACF
-//include_once('includes/customFields.php');
+include_once('includes/customFields.php');
 define( 'ACF_LITE', true );
 
 
@@ -574,6 +574,11 @@ function my_theme_register_required_plugins() {
 		array(
 			'name'      => 'Lingo Tek translation',
 			'slug'      => 'lingotek-translation',
+			'required'  => true,
+		),
+		array(
+			'name'      => 'Intuitive custom post order',
+			'slug'      => 'intuitive-custom-post-order',
 			'required'  => true,
 		),
 

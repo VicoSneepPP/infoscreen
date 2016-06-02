@@ -168,6 +168,10 @@ input[type="submit"] {
 /*------------------------------------*\
    hoofdberichten
 \*------------------------------------*/
+.content-block
+{
+	height: 0px;
+}
 .content-block.active {
 	position: absolute;
 	left: 0;
@@ -395,6 +399,14 @@ p {
 	#weer-temp
 	{
 		right: 10px;
+	}
+	.content-block
+	{
+
+	    height: 100%;
+    	border-top: 1px solid #000000;
+    	overflow: hidden;
+    	padding: 20px 0px;
 	}
 }
 @media only screen and (max-width:320px)
