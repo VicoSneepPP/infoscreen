@@ -40,7 +40,7 @@ function updateNews()
 {
 
 	/** TICKER **/
-	$.getJSON( "wp-content/themes/konenieuws/includes/pp-news/newsfeed.php?url=http://www.ad.nl/rss.xml", function(rss)
+	$.getJSON( "../wp-content/themes/konenieuws/includes/pp-news/newsfeed.php?url=http://www.ad.nl/home/rss.xml", function(rss)
 	{
 		var titels = new Array();
 		var div = $("#news-items.original");
