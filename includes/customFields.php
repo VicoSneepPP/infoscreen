@@ -294,9 +294,9 @@ register_field_group(array (
 		),
 		'menu_order' => 0,
 	));
-	register_field_group(array (
-		'id' => 'acf_voeg-link-toe-aan-nieuwsbericht',
-		'title' => 'Voeg link toe aan Nieuwsbericht',
+register_field_group(array (
+		'id' => 'acf_voeg-link-toe-aan-bericht',
+		'title' => 'Voeg link toe aan bericht',
 		'fields' => array (
 			array (
 				'key' => 'field_575e7e9baa257',
@@ -304,7 +304,7 @@ register_field_group(array (
 				'name' => 'linkNews',
 				'type' => 'text',
 				'instructions' => 'Type hier de link in waar het bericht naar toe moet linken. Standaard is hij gelinkt aan het intranet (maak leeg als je geen link wilt toevoegen).',
-				'default_value' => 'http://www.plusport.com',
+				'default_value' => 'http://intranet.konenet.com/countries/nl_nl/Pages/default.aspx',
 				'placeholder' => '',
 				'prepend' => '',
 				'append' => '',
@@ -320,6 +320,15 @@ register_field_group(array (
 					'value' => 'nieuws',
 					'order_no' => 0,
 					'group_no' => 0,
+				),
+			),
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'hoofdbericht',
+					'order_no' => 0,
+					'group_no' => 1,
 				),
 			),
 		),

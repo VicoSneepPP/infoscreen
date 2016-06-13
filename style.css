@@ -56,6 +56,7 @@ a {
 }
 a:hover {
 	color:#444;
+	text-decoration: none;
 }
 a:focus {
 	outline:0;
@@ -182,6 +183,7 @@ input[type="submit"] {
 .content-block
 {
 	height: 0px;
+	z-index:-1
 }
 .content-block.active {
 	position: absolute;
@@ -189,8 +191,13 @@ input[type="submit"] {
     top: 0;
     width: 100%;
     height: 100%;
+	z-index:9999999999;
 }
-
+.content-block.active a
+{
+	overflow: hidden;
+	display:block;
+}
 .text {
 	padding: 20px;
 }

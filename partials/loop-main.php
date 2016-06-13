@@ -5,8 +5,7 @@
 
 
 	if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post();
-
-
+	$linkNews = get_field('linkNews');
 	$imgFormat = get_field('img_format_lrg');
 
 
@@ -14,7 +13,7 @@
 		{
 			echo '<div class="content-block">';
 			//echo 	'<div class="col-md-12">';
-			echo 		'<div class="image main hor">';
+			echo 		'<a href="' . $linkNews .'" target="_blank"><div class="image main hor">';
 							the_post_thumbnail();
 			echo 		'</div>';
 			//echo 	'</div>';
@@ -28,7 +27,7 @@
 			echo 				get_the_content();
 			echo 			'</p>';
 			echo 		'</div>';
-			echo 	'</div>';
+			echo 	'</a></div>';
 			//echo '</div>';
 
 
@@ -37,7 +36,7 @@
 		{
 			echo '<div class="content-block">';
 			//echo 	'<div class="col-md-6">';
-			echo 		'<div class="image main ver">';
+			echo 		'<a href="' . $linkNews . '" target="_blank"><div class="image main ver">';
 							the_post_thumbnail();
 			echo 		'</div>';
 			//echo 	'</div>';
@@ -48,7 +47,7 @@
 								the_title();
 			echo			'</h1></div><p>';
 			echo		 		get_the_content();
-			echo 		'</div>';
+			echo 		'</div></a>';
 			echo 	'</div>';
 			//echo '</div>';
 		};
