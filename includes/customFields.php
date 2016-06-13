@@ -294,6 +294,45 @@ register_field_group(array (
 		),
 		'menu_order' => 0,
 	));
+	register_field_group(array (
+		'id' => 'acf_voeg-link-toe-aan-nieuwsbericht',
+		'title' => 'Voeg link toe aan Nieuwsbericht',
+		'fields' => array (
+			array (
+				'key' => 'field_575e7e9baa257',
+				'label' => 'Nieuws link',
+				'name' => 'linkNews',
+				'type' => 'text',
+				'instructions' => 'Type hier de link in waar het bericht naar toe moet linken. Standaard is hij gelinkt aan het intranet (maak leeg als je geen link wilt toevoegen).',
+				'default_value' => 'http://www.plusport.com',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'nieuws',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+
+
 }
 
 ?>
