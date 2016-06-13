@@ -115,12 +115,12 @@ function pp_header_scripts()
     }
 }
 
-// Load HTML5 Blank conditional scripts
+
 function pp_conditional_scripts()
 {
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('scriptname'); // Enqueue it!
+    if (is_page_template( 'template-home.php')) {
+        wp_register_script('frontScript', get_template_directory_uri() . '/js/frontScript.js', array('jquery'), '1.0.0'); // Conditional script(s)
+        wp_enqueue_script('frontScript'); // Enqueue it!
     }
 }
 
