@@ -183,6 +183,117 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
+register_field_group(array (
+		'id' => 'acf_aantal-hoofdberichten',
+		'title' => 'Aantal hoofdberichten',
+		'fields' => array (
+			array (
+				'key' => 'field_574eb6fd97640',
+				'label' => 'Kies het aantal hoofdberichten die wilt tonen',
+				'name' => 'no_main',
+				'type' => 'number',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => 1,
+				'max' => '',
+				'step' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'default',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-home.php',
+					'order_no' => 0,
+					'group_no' => 1,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+				0 => 'the_content',
+				1 => 'featured_image',
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
+		'id' => 'acf_berichten-opties',
+		'title' => 'Berichten opties',
+		'fields' => array (
+			array (
+				'key' => 'field_575e71ca3e05e',
+				'label' => 'Kies het aantal hoofdberichten die wilt tonen',
+				'name' => 'no_main',
+				'type' => 'number',
+				'instructions' => 'Kies hier het maximaal aantal Hoofdberichten die je wilt tonen.',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => 1,
+				'max' => '',
+				'step' => '',
+			),
+			array (
+				'key' => 'field_575e71ed3e05f',
+				'label' => 'Aantal nieuwsitems',
+				'name' => 'no_nieuws',
+				'type' => 'number',
+				'instructions' => 'Kies hier het maximaal aantal berichten die je wilt tonen.',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => 1,
+				'max' => '',
+				'step' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'template-home.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+				0 => 'the_content',
+				1 => 'excerpt',
+				2 => 'custom_fields',
+				3 => 'discussion',
+				4 => 'comments',
+				5 => 'featured_image',
+				6 => 'categories',
+				7 => 'tags',
+				8 => 'send-trackbacks',
+			),
+		),
+		'menu_order' => 0,
+	));
 }
 
 ?>
