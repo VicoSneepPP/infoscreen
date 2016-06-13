@@ -1,11 +1,11 @@
 /*
-	Theme Name: HTML5 Blank
-	Theme URI: http://html5blank.com
-	Description: HTML5 Blank WordPress Theme
-	Version: 1.4.3
-	Author: Todd Motto (@toddmotto)
-	Author URI: http://toddmotto.com
-	Tags: Blank, HTML5, CSS3
+	Theme Name: Kone Nieuws NL
+	Theme URI: http://plusport.com
+	Description: Infoscreen for Kone NL
+	Version: 1.0.0
+	Author:  Vico Sneep
+	Author URI: http://plusport.com
+	Tags: Bootstrap, HTML5, CSS3, infoscreen, news website
 
 	License: MIT
 	License URI: http://opensource.org/licenses/mit-license.php
@@ -68,6 +68,11 @@ input:focus {
 	outline:0;
 	border:1px solid #04A4CC;
 }
+main
+{
+	max-height: 1020px;
+    overflow: hidden;
+}
 
 /*------------------------------------*\
     STRUCTURE
@@ -94,6 +99,11 @@ input:focus {
 	max-height: 600px;
 	overflow: hidden;
 }
+.image.main.hor img
+{
+	width: 100%;
+}
+
 .image.main.ver
 {
 	width: 50%;
@@ -108,9 +118,8 @@ input:focus {
 /*------------------------------------*\
    index
 \*------------------------------------*/
-.home .logo-img
-{
-	display: none;
+.logo {
+    max-width: 400px;
 }
 .logo-home
 {
@@ -185,6 +194,7 @@ input[type="submit"] {
 .text {
 	padding: 20px;
 }
+
 /*------------------------------------*\
    Kleine berichten
 \*------------------------------------*/
@@ -193,7 +203,7 @@ input[type="submit"] {
 	position: relative;
 	margin-top: 30px;
 	width: 100%;
-	height: 350px;
+	height: 400px;
 	overflow: hidden;
 }
 
@@ -207,7 +217,7 @@ input[type="submit"] {
  #news .news-item .image
 {
 	width: 100%;
-	height: 300px;
+	height: 350px;
 	overflow: hidden;
 }
 
@@ -256,7 +266,7 @@ input[type="submit"] {
 #weer
 {
 	position:relative;
-	height: 340px;
+	height: 400px !important;
 
 	text-align:center;
 	color:#FFF;
@@ -287,7 +297,7 @@ input[type="submit"] {
 	height: 100%;
 	top:0px;
 	background-color:#FFF;
-display:none;
+	display:none;
 }
 #weer-bg-seperator-1 { left:25%; }
 #weer-bg-seperator-2 { left:50%; }
@@ -315,32 +325,49 @@ display:none;
 #weer-type
 {
 	position:absolute;
-	bottom: 120px; left:0px;
-	width:25%; height:30px;
+	bottom: 120px;
+	left:0px;
+	width:25%;
+	height:30px;
 	display:none;
 }
 
 #weer-icon
 {
 	position:absolute;
-	bottom: 0px; left:50%;
+	bottom: 0px;
+	left:50%;
 	margin-left:-160px;
-	width:320px; height:206px;
+	width:320px;
+	height:206px;
 }
 
 #weer-date
 {
-	position:absolute;
-	bottom: 90px; right:0px;
-	width:25%; height:30px;
+	position: absolute;
+    bottom: 120px;
+    right: 15px;
+    width: 25%;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
 }
 
 #weer-temp
 {
 	position:absolute;
-	bottom: 30px; right:0px;
-	width:25%; height:30px;
-	font-size: 40px;
+	bottom: 30px;
+	right: 10px;
+	width: 25%;
+	height: 30px;
+	text-align: right;
+}
+
+#weer-date.home {
+    left: 15px;
+    text-align: left;
+    bottom: 40px;
 }
 
 /*------------------------------------*\
@@ -361,12 +388,17 @@ p {
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: x-large;
 }
+footer
+{
+	padding-top: 30px;
+}
 /*------------------------------------*\
     RESPONSIVE
 \*------------------------------------*/
 
 @media only screen and (min-width:320px) and (max-width: 767px)
 {
+
 	h1 {
 		font-size: 2.0em;
 	}
@@ -400,7 +432,11 @@ p {
 	}
 	#weer-temp
 	{
-		right: 10px;
+		right: 30px;
+	}
+	#weer-icon
+	{
+		bottom: 70px;
 	}
 	.content-block
 	{
@@ -410,12 +446,25 @@ p {
     	overflow: hidden;
     	padding: 20px 0px;
 	}
+	#news .news-item .image
+	{
+	    height: auto
+
+	}
+	#kleinberichten
+	{
+		height: 250px;
+	}
+	footer
+	{
+		padding: 0px;
+	}
 }
 @media only screen and (max-width:320px)
 {
 	#news
 	{
-		height: 240px;
+		height: 300px;
 	}
 }
 @media only screen and (min-width:321px) and (max-width:480px)
@@ -430,22 +479,23 @@ p {
 	}
 
 }
-@media only screen and (min-width:768px) {
-
+@media only screen and (min-width:320px) and (max-width: 1280px)
+{
+	main
+	{
+		overflow: visible;
+		max-height: 100%;
+	}
 }
-@media only screen and (min-width:1024px) {
 
-}
-@media only screen and (min-width:1140px) {
+@media only screen and (min-width: 768px) and (max-width:1024px) {
 
+	#content
+	{
+	height: 730px;
+	}
 }
-@media only screen and (min-width:1280px) {
 
-}
-@media only screen and (-webkit-min-device-pixel-ratio:1.5),
-	   only screen and (min-resolution:144dpi) {
-
-}
 
 /*------------------------------------*\
     MISC
