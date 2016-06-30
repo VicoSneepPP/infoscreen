@@ -16,7 +16,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-title" content="PlusPort Academy">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="./img/touch-57.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./img/touch-72.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="./img/touch-114.png" />
+
+
 		<?php wp_head(); ?>
+		<script>addToHomescreen({mandatory:true});</script>
 		<script>
         // conditionizr.com
         // configure environment tests

@@ -110,6 +110,9 @@ function pp_header_scripts()
 		wp_register_script('ppnewsticker', get_template_directory_uri() . '/js/lib/newsticker.js', array('jquery'), '1.0.0'); // news tikker
         wp_enqueue_script('ppnewsticker'); // Enqueue it!
 
+		wp_register_script('homeicon', get_template_directory_uri() . '/js/lib/addtohomescreen.js', array('jquery'), '1.0.0'); // news tikker
+        wp_enqueue_script('homeicon'); // Enqueue it!
+
         wp_register_script('ppscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('ppscripts'); // Enqueue it!
     }
@@ -129,6 +132,9 @@ function pp_styles()
 {
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
+
+	wp_register_style('addhomeicon', get_template_directory_uri() . '/css/addtohomescreen.css', array(), '1.0', 'all');
+    wp_enqueue_style('addhomeicon'); // Enqueue it!
 
 	wp_register_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '1.0', 'all');
     wp_enqueue_style('bootstrap'); // Enqueue it!
