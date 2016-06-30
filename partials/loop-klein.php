@@ -15,8 +15,9 @@
 
 		}?>
 		</div>
+
+		<div class="title"><?php the_title(); ?> </div>
 		</a>
-	<div class="title"><?php the_title(); ?> </div>
 	</div>
 
 		<?php endwhile; ?>
